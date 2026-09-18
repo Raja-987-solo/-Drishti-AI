@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Drishti AI Design Tokens & Global CSS
+   Theme: Clinical AI + Rural Healthcare (Clean Medical Light Palette)
+   Best overall look: White + Navy + Teal + Cyan, with clinical status colors.
+   ========================================================================== */
+
+:root {
+  /* Background Palette - Soft White & Medical Slate */
+  --bg-primary: #f8fafc;         /* Soft white / light blue-gray */
+  --bg-secondary: #f1f5f9;       /* Light clinical slate */
+  --bg-tertiary: #e2e8f0;        /* Subtle section accent */
+  --bg-card: #ffffff;           /* Clean white cards */
+  --bg-card-hover: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+
+  /* Primary Brand & Clinical Colors */
+  --color-navy: #0f172a;         /* Deep Navy - Main headings & navigation */
+  --color-navy-dark: #090e1a;
+  --color-navy-light: #1e293b;
+  --color-teal: #0d9488;         /* Teal - AI & primary actions */
+  --color-teal-dark: #0f766e;
+  --color-teal-light: #14b8a6;
+  --color-cyan: #0284c7;         /* Cyan - Highlights & XAI */
+  --color-cyan-light: #38bdf8;
+
+  /* Clinical Decision Status Colors */
+  --state-green: #16a34a;        /* Normal / Safe (Grade 0, Acceptable Quality) */
+  --state-green-bg: #f0fdf4;
+  --state-green-border: #bbf7d0;
+  --state-amber: #d97706;        /* Review Required (Mild/Mod NPDR) */
+  --state-amber-bg: #fffbeb;
+  --state-amber-border: #fde68a;
+  --state-red: #dc2626;          /* Referable DR (Severe NPDR/PDR, Urgent) */
+  --state-red-bg: #fef2f2;
+  --state-red-border: #fecaca;
+  --state-grey: #64748b;         /* Safe Abstention / Conflict / Ungradable */
+  --state-grey-bg: #f8fafc;
+  --state-grey-border: #e2e8f0;
+
+  /* Borders & Dividers */
+  --border-subtle: #e2e8f0;      /* Crisp light card border */
+  --border-card: #cbd5e1;
+  --border-highlight: #0d9488;
+
+  /* Text Colors */
+  --text-primary: #0f172a;       /* Deep Navy high-contrast text */
+  --text-secondary: #334155;     /* Slate 700 readable body text */
+  --text-muted: #64748b;         /* Slate 500 captions & labels */
+  --text-inverse: #ffffff;
+
+  /* Typography */
+  --font-display: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows & Elevation */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-card-hover: 0 10px 25px -3px rgba(15, 23, 42, 0.09), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+  --shadow-modal: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+}
+
+/* Reset & Base Rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Medical Micro-Grid Background Pattern */
+body {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(13, 148, 136, 0.03) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.03) 0%, transparent 45%),
+    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Headings & Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-navy);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar for Medical Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Container Utility */
+.app-container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
